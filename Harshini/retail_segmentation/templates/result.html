@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if show %}
+<h4>Optimal Number of Clusters: {{ optimal_k }}</h4>
+
+<h5>Cluster Profile:</h5>
+{{ cluster_profile|safe }}
+
+<h5>Cluster Sizes:</h5>
+{{ cluster_size|safe }}
+
+<h5>2D PCA Cluster Plot:</h5>
+<img src="data:image/png;base64,{{ plot_2d }}" class="img-fluid">
+
+<h5>3D PCA Cluster Plot:</h5>
+{{ plot_3d|safe }}
+
+<a href="/" class="btn btn-primary mt-3">Back to Home</a>
+{% else %}
+<p class="text-center">Upload a CSV or use synthetic data to generate clusters.</p>
+{% endif %}
+{% endblock %}

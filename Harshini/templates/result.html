@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<h4>Optimal Number of Clusters: {{ optimal_k }}</h4>
+
+<h5>Cluster Profile:</h5>
+{{ cluster_profile|safe }}
+
+<h5>Cluster Sizes:</h5>
+{{ cluster_size|safe }}
+
+<h5>2D PCA Cluster Plot:</h5>
+<img src="{{ url_for('static', filename='plots/cluster_2d.png') }}" class="img-fluid">
+
+<h5>3D PCA Cluster Plot:</h5>
+<iframe src="{{ url_for('static', filename='plots/cluster_3d.html') }}" width="100%" height="600"></iframe>
+
+<a href="{{ url_for('download') }}" class="btn btn-success mt-3">Download Clustered Data</a>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Student List</h2>
+
+<div class="grid">
+    {% for student in students %}
+        <div class="student-card">
+            <h3>{{ student.name }}</h3>
+            <p><strong>Age:</strong> {{ student.age }}</p>
+            <p><strong>Course:</strong> {{ student.course }}</p>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

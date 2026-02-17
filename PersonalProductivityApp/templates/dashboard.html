@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ greeting }}, {{ username }}!</h2>
+
+<div class="row mt-4">
+    <div class="col-md-4">
+        <h4>To-Do List</h4>
+        <form method="POST" action="{{ url_for('add_todo') }}">
+            <div class="input-group mb-2">
+                <input type="text" name="task" class="form-control" placeholder="New Task" required>
+                <button class="btn btn-primary">Add</button>
+            </div>
+        </form>
+        <ul class="list-group">
+            {% for task in todo %}
+            <li class="list-group-item">{{ task }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="col-md-4">
+        <h4>Daily Goals</h4>
+        <form method="POST" action="{{ url_for('add_goal') }}">
+            <div class="input-group mb-2">
+                <input type="text" name="goal" class="form-control" placeholder="New Goal" required>
+                <button class="btn btn-primary">Add</button>
+            </div>
+        </form>
+        <ul class="list-group">
+            {% for g in goals %}
+            <li class="list-group-item">{{ g }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="col-md-4">
+        <h4>Notes</h4>
+        <form method="POST" action="{{ url_for('add_note') }}">
+            <div class="input-group mb-2">
+                <input type="text" name="note" class="form-control" placeholder="New Note" required>
+                <button class="btn btn-primary">Add</button>
+            </div>
+        </form>
+        <ul class="list-group">
+            {% for n in notes %}
+            <li class="list-group-item">{{ n }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<a href="{{ url_for('logout') }}" class="btn btn-danger mt-4">Logout</a>
+{% endblock %}

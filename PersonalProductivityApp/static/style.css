@@ -1,0 +1,23 @@
+body[data-theme="light"] {
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+body[data-theme="dark"] {
+    background-color: #212529;
+    color: #f8f9fa;
+}
+
+body[data-theme="dark"] .navbar {
+    background-color: #343a40 !important;
+}
+
+body[data-theme="dark"] .list-group-item {
+    background-color: #343a40;
+    color: #f8f9fa;
+}
+
+body[data-theme="dark"] .btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
